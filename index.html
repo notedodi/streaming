@@ -1,16 +1,29 @@
-<script src='//ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js'></script>
+<script src="//ssl.p.jwpcdn.com/player/v/8.21.0/jwplayer.js"></script>
 <script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
 </script>
-   <div id="jwplayerDiv"></div>
-    <script type="text/javascript">
-        // Setup JWPlayer
-        jwplayer("jwplayerDiv").setup({
-            file: "https://stream.sainaertebat.com/hls2/varzeshtest.m3u8",
-            position: 'bottom',
-            autostart: true,
-            stretching: "",
-            width: "100%",
-          height: "100%",
+<div id="player"></div>
+<script>
+
+    var playerInstance = jwplayer("player");
+
+    playerInstance.setup({
+
+        playlist: [{
+            "title": "idoyganteng",
+            "sources": [
+                {
+                    "default": false,
+                    "type": "dash",
+                    "file": 'https://live03p-seg.msf.cdn.mediaset.net/live/ch-c5/c5-dash-widevine.isml/manifest.mpd',
+                    "drm": {
+                        "clearkey": { "keyId": "00f9f3c0783536b8ce4a30a01a52e082", "key": "e926f7d45af4f7d154c990eae6a2d937" }
+                    },
+                    "label": "0"
+                }
+            ]
+        }],
+        width: "100%",
+        height: "100%",
         aspectratio: "16:9",
         autostart: true,
 			 logo: {
@@ -21,4 +34,4 @@
 			cast:{},
 			sharing: {}
     });
-    </script>
+</script>
